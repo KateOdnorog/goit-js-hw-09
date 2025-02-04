@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -87,10 +90,10 @@ function imagesTemplate(items) {
 const markup = imagesTemplate(images);
 list.insertAdjacentHTML('afterbegin', markup);
 
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
-const lightbox = new SimpleLightbox('.gallery a', {
+let lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   animationSpeed: 250,
 });
+
+const bodyGallery = (document.querySelector('body').style.backgroundColor =
+  'white');
